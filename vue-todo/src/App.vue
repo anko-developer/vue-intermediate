@@ -14,7 +14,7 @@ import TodoList from './components/TodoList';
 import TodoFooter from './components/TodoFooter';
 
 export default {
-  data: function() {
+  data() {
     return {
       todoItems: []
     }

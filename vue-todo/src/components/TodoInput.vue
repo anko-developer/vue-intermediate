@@ -1,18 +1,31 @@
 <template>
   <div class="inputBox shadow">
     <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
-    <!-- <button class="" v-on:click="addTodo">add</button> -->
     <span class="addContainer" v-on:click="addTodo">
       <i class="fas fa-plus addBtn"></i>
     </span>
+
+    <Modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">
+        경고!
+        <i class="closeModalBtn fas fa-times" @click="showModal = false"></i>
+      </h3>
+      
+      <section slot="body">
+        섹션
+      </section>
+    </Modal>
   </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue';
+
 export default {
-  data: function() {
+  data() {
     return {
-      newTodoItem: ""
+      newTodoItem: '',
+      showModal: false
     }
   },
   methods: {
@@ -20,11 +33,16 @@ export default {
       if (this.newTodoItem !== '') {
         this.$emit('addtodoItem', this.newTodoItem);
         this.clearInput();
+      } else {
+        this.showModal = !this.showModal;
       }
     },
     clearInput() {
       this.newTodoItem = '';
     }
+  },
+  components: {
+    Modal: Modal
   }
 }
 </script>
@@ -60,5 +78,9 @@ export default {
 .addBtn {
   vertical-align: middle;
   color: #fff;
+}
+
+.closeModalBtn {
+  color: #42b983;
 }
 </style>
