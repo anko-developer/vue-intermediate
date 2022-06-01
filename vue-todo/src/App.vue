@@ -34,7 +34,7 @@ export default {
     },
     toggleOneItem(todoItem, index) {
       this.todoItems[index].completed = !this.todoItems[index].completed
-      // 로컬 스토리지 데이터 갱신
+      // 로컬 스토리지 데이터 갱신.
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     },
