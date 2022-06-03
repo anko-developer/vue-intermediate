@@ -14,27 +14,6 @@ import TodoList from './components/TodoList';
 import TodoFooter from './components/TodoFooter';
 
 export default {
-  data() {
-    return {
-      todoItems: []
-    }
-  },
-  methods: {
-    // removeOneItem(todoItem, index) {
-    //   localStorage.removeItem(todoItem.item); // localStorage key 값으로 remove
-    //   this.todoItems.splice(index, 1); // Array 에서도 index 값으로 부터 1개 splice
-    // },
-    // toggleOneItem(todoItem, index) {
-    //   this.todoItems[index].completed = !this.todoItems[index].completed
-    //   // 로컬 스토리지 데이터 갱신.
-    //   localStorage.removeItem(todoItem.item);
-    //   localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-    // },
-    // clearAllItems() {
-    //   localStorage.clear();
-    //   this.todoItems = [];
-    // }
-  },
   components: {
     TodoHeader,
     TodoInput,
