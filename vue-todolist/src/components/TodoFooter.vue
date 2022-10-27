@@ -1,12 +1,18 @@
 <template>
-  <div>
-    Footer
-  </div>
+  <footer class="clearAllContainer">
+    <span class="clearBtn" @click="clearTodo">clear all</span>
+  </footer>
 </template>
 
 <script>
-export default {
+import { mapMutations } from 'vuex'
 
+export default {
+  methods: {
+    ...mapMutations({
+      clearTodo: 'clearAllItems'
+    })
+  }
 }
 </script>
 
